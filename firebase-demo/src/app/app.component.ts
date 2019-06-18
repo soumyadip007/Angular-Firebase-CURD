@@ -16,6 +16,7 @@ export class AppComponent {
   constructor(db: AngularFireDatabase){
 
     this.course$=db.list('/courses');
+    console.log(this.course$);
 
     //db.list('/courses');
 
