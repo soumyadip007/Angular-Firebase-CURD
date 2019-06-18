@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from 'src/environments/environment.prod';
 
 @NgModule({
@@ -12,7 +13,8 @@ import { environment } from 'src/environments/environment.prod';
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment)
+    AngularFireModule.initializeApp(environment),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
