@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { AngularFireDatabase} from 'angularfire2/database';
 
 @Component({
@@ -6,7 +6,8 @@ import { AngularFireDatabase} from 'angularfire2/database';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy {
+
   courses:any[];
 
   constructor(db: AngularFireDatabase){
@@ -19,5 +20,9 @@ export class AppComponent {
       console.log(this.courses);
 
     });
+
+
    }
+
+   
 }
