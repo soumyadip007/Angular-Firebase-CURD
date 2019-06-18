@@ -1,13 +1,13 @@
 <button >Destroy</button>
 
 <ul>
-  <li *ngFor="let x of course$ | async ">
-  {{x.$value }}
+  <li *ngFor="let course of courses$ | async ">
+  {{course }}
   </li>
 </ul>
 
 <p>
 
-  {{course$ |  json}}
+  {{course$ | async | json}}
 </p>
 
