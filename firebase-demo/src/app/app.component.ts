@@ -9,26 +9,29 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnDestroy {
 
-  courses:any[];
-  subscription:Subscription;
+  course$;
+  // courses:any[];
+   //subscription:Subscription;
 
   constructor(db: AngularFireDatabase){
 
+    this.course$=db.list('/courses');
+
     //db.list('/courses');
 
-   this.subscription = db.list('/courses').valueChanges()
-    .subscribe(courses=>{   //error
-      this.courses=courses;
-      console.log(this.courses);
+  //  this.subscription = db.list('/courses').valueChanges()
+  //   .subscribe(courses=>{   //error
+  //     this.courses=courses;
+  //     console.log(this.courses);
 
-    });
+  //   });
 
    }
 
 
    ngOnDestroy(){
 
-    this.subscription.unsubscribe();
+   // this.subscription.unsubscribe();
     console.log('Destroy');
    }
 }
