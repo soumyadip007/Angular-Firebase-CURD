@@ -17,10 +17,10 @@ export class AppComponent {
 
   constructor(db: AngularFireDatabase){
 
-    this.courses$=db.list('/courses');
+    this.courses$=db.list('/courses').valueChanges();
     console.log(this.courses$);
 
-    this.course$=db.object('/courses/1');
+    this.course$=db.object('/courses/1').valueChanges();
 
     //db.list('/courses');
 
