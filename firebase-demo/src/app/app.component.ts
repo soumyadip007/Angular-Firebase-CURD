@@ -11,11 +11,13 @@ export class AppComponent {
 
   constructor(db: AngularFireDatabase){
 
-    db.list('/courses')
-    .subscribe(courses=>{
-      this.courses=courses;
-      console.log(this.courses);
+    db.list('/courses');
 
-    });
+    // db.list('/courses')
+    // .subscribe(courses=>{
+    //   this.courses=courses;
+    //   console.log(this.courses);
+
+    // });
    }
 }
