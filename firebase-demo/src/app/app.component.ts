@@ -9,20 +9,23 @@ import { AngularFireDatabase} from 'angularfire2/database';
 export class AppComponent implements OnDestroy {
 
   courses:any[];
+  subscription;
 
   constructor(db: AngularFireDatabase){
 
     //db.list('/courses');
 
-    db.list('/courses').valueChanges()
+   this.subscription = db.list('/courses').valueChanges()
     .subscribe(courses=>{   //error
       this.courses=courses;
       console.log(this.courses);
 
     });
 
-
    }
 
-   
+
+   ngOnDestroy(){
+
+   }
 }
