@@ -9,8 +9,9 @@ import { AngularFireDatabase} from 'angularfire2/database';
 })
 export class AppComponent {
 
-  courses$;
-
+ //  FirebaseListObservable(<any[]>) ;
+ courses$;
+ 
   course$;
 
   author$;
@@ -43,4 +44,11 @@ export class AppComponent {
   //  // this.subscription.unsubscribe();
   //   console.log('Destroy');
   //  }
+
+add( course: HTMLInputElement)
+{
+  this.courses$.push(course);
+  course.value='';
+}
+
 }
