@@ -12,6 +12,8 @@ export class AppComponent {
   courses$;
 
   course$;
+
+  author$;
   // courses:any[];
    //subscription:Subscription;
 
@@ -21,6 +23,8 @@ export class AppComponent {
     console.log(this.courses$);
 
     this.course$=db.object('/courses/1').valueChanges();
+
+    this.author$=db.object('/author/1').valueChanges();
 
     //db.list('/courses');
 
