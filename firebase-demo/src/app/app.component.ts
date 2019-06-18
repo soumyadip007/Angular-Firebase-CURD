@@ -9,14 +9,18 @@ import { AngularFireDatabase} from 'angularfire2/database';
 })
 export class AppComponent {
 
+  courses$;
+
   course$;
   // courses:any[];
    //subscription:Subscription;
 
   constructor(db: AngularFireDatabase){
 
-    this.course$=db.list('/courses');
-    console.log(this.course$);
+    this.courses$=db.list('/courses');
+    console.log(this.courses$);
+
+    this.course$=db.object('/courses/1');
 
     //db.list('/courses');
 
